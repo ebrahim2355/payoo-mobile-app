@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="number">0</h1>
+    <div>
+        <button id="btn-1">1</button>
+        <button id="btn-2">2</button>
+        <button id="btn-3">3</button>
+    </div>
+
+    <script>
+
+        function putNumber(num){
+            const h1 = document.getElementById("number");
+            h1.innerText = num;
+        }
+
+        document.getElementById("btn-1").addEventListener("click", function(){
+            // const h1 = document.getElementById("number");
+            // h1.innerText = "1"
+            putNumber("1");
+        })
+        document.getElementById("btn-2").addEventListener("click", function(){
+            // const h1 = document.getElementById("number");
+            // h1.innerText = "2"
+            putNumber("2");
+        })
+        document.getElementById("btn-3").addEventListener("click", function(){
+            // const h1 = document.getElementById("number");
+            // h1.innerText = "3"
+            putNumber("3");
+        })
+    </script>
+</body>
+</html>

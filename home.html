@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/6a5d855e63.js" crossorigin="anonymous"></script>
+    <title>Payoo Interface</title>
+    <link rel="icon" type="image/png" href="payoo.png">
+</head>
+
+<body class="bg-[#f4f5f7] h-[140vh]">
+    <div class="bg-white rounded-b-[24px]">
+        <nav class="flex justify-between items-center pt-[18px] border-b border-gray-300 pb-[11px]">
+            <div class="flex items-center">
+                <img class="h-[48px] w-[50px] ml-[24px]" src="assets/Group.png" alt="">
+                <div>
+                    <p class="font-extrabold text-[18px]">$<span id="available-balance">45000</span></p>
+                    <p class="text-[14px] text-[#080808] opacity-[50%]">Available Balance</p>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="bg-transparent rounded-[8px] text-[14px] text-[#080808] opacity-[50%] border border-blac p-[10px] mr-[24px]">Log
+                    Out <i class="fa-regular fa-share-from-square"></i></button>
+            </div>
+        </nav>
+        <header>
+            <h2 class="text-[24px] font-extrabold ml-[24px] mt-[32px] mb-[12px]">🔥Welcome to Payooo!</h2>
+            <p class="text-[#080808] opacity-[50%] pl-[24px] pr-[24px]">Enjoy easy and convenient financial services
+                with us. Cashout charge is low and </p>
+        </header>
+        <section class="grid grid-cols-3 gap-[16.5px] p-[24px]">
+            <div id="add-button"
+                class="form-btn flex flex-col items-center justify-center p-[20px] border border-gray-200 rounded-[12px]">
+                <img src="assets/wallet1.png" alt="">
+                <p class="pt-[8px] text-[14px] text-[#080808] opacity-[70%]">Add Money</p>
+            </div>
+            <div id="cash-out-button"
+                class="form-btn flex flex-col items-center justify-center p-[20px] border border-gray-200 rounded-[12px]">
+                <img src="assets/send1.png" alt="">
+                <p class="pt-[8px] text-[14px] text-[#080808] opacity-[70%]">Cashout</p>
+            </div>
+            <div id="transfer-button"
+                class="form-btn flex flex-col items-center justify-center  border border-gray-200 rounded-[12px]">
+                <img src="assets/money1.png" alt="">
+                <p class="pt-[8px] text-[14px] text-[#080808] opacity-[70%]">Transfer Money</p>
+            </div>
+            <div id="bonus-button"
+                class="form-btn flex flex-col items-center justify-center p-[20px] border border-gray-200 rounded-[12px]">
+                <img src="assets/bonus1.png" alt="">
+                <p class="pt-[8px] text-[14px] text-[#080808] opacity-[70%]">Get Bonus</p>
+            </div>
+            <div id="pay-bill-button"
+                class="form-btn flex flex-col items-center justify-center p-[20px] border border-gray-200 rounded-[12px]">
+                <img src="assets/purse1.png" alt="">
+                <p class="pt-[8px] text-[14px] text-[#080808] opacity-[70%]">Pay Bill</p>
+            </div>
+            <div id="transactions-button"
+                class="form-btn flex flex-col items-center justify-center p-[20px] border border-gray-200 rounded-[12px]">
+                <img src="assets/transaction1.png" alt="">
+                <p class="pt-[8px] text-[14px] text-[#080808] opacity-[70%]">Transactions</p>
+            </div>
+        </section>
+    </div>
+
+    <main>
+        <div id="add-money-parent" class="form hidden">
+            <h3 class="font-semibold text-[18px] pl-[24px] mt-[32px] mb-[16px]">Add Money</h3>
+            <section class="bg-white ml-[24px] mr-[24px] rounded-[24px] pt-[24px] pb-[24px]">
+                <form class="ml-[24px] mr-[24px]">
+                    <div>
+                        <p class="font-[550] mb-[12px]">Select a bank</p>
+                        <select id="bank" class="select rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]">
+                            <option value="" disabled selected hidden>Pick a Bank</option>
+                            <option>IBBL Bank</option>
+                            <option>DBBL Bank</option>
+                            <option>Brac Bank</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Bank Account Number</p>
+                        <input id="account-number" type="number" placeholder="Enter 11 digit account number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Amount to Add</p>
+                        <input id="add-amount" type="number" placeholder="Add Amount to withdraw"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Pin Number</p>
+                        <input id="add-pin" type="number" placeholder="Enter 4 digit pin number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <button id="add-money-btn" class="btn btn-primary bg-[#0874f2] rounded-[32px] w-full">Add
+                        Money</button>
+                </form>
+            </section>
+        </div>
+
+        <div id="cash-out-parent" class="form hidden">
+            <h3 class="font-semibold text-[18px] pl-[24px] mt-[32px] mb-[16px]">Cash Out</h3>
+            <section class="bg-white ml-[24px] mr-[24px] rounded-[24px] pt-[24px] pb-[24px]">
+                <form class="ml-[24px] mr-[24px]">
+                    <div>
+                        <p class="font-[550] mb-[12px]">Agent Number</p>
+                        <input id="agent-number" type="number" placeholder="Enter 11 digit number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Amount</p>
+                        <input id="withdraw-amount" type="number" placeholder="Enter Amount to withdraw"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Pin Number</p>
+                        <input id="withdraw-pin" type="number" placeholder="Enter 4 digit pin number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <button id="withdraw-btn" class="btn btn-primary bg-[#0874f2] rounded-[32px] w-full">Withdraw
+                        Money</button>
+                </form>
+            </section>
+        </div>
+
+        <div id="transfer-money-parent" class="form hidden">
+            <h3 class="font-semibold text-[18px] pl-[24px] mt-[32px] mb-[16px]">Transfer Money</h3>
+            <section class="bg-white ml-[24px] mr-[24px] rounded-[24px] pt-[24px] pb-[24px]">
+                <form class="ml-[24px] mr-[24px]">
+                    <div>
+                        <p class="font-[550] mb-[12px]">User Account Number</p>
+                        <input id="user-account-number" type="number" placeholder="Enter 11 digit number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Amount</p>
+                        <input id="transfer-amount" type="number" placeholder="Enter Amount to transfer"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Pin Number</p>
+                        <input id="transfer-pin" type="number" placeholder="Enter 4 digit pin number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <button id="transfer-btn" class="btn btn-primary bg-[#0874f2] rounded-[32px] w-full">Send
+                        Now</button>
+                </form>
+            </section>
+        </div>
+
+        <div id="get-bonus-parent" class="form hidden">
+            <h3 class="font-semibold text-[18px] pl-[24px] mt-[32px] mb-[16px]">Get Bonus</h3>
+            <section class="bg-white ml-[24px] mr-[24px] rounded-[24px] pt-[24px] pb-[24px]">
+                <form class="ml-[24px] mr-[24px]">
+                    <div>
+                        <p class="font-[550] mb-[12px]">Enter Bonus Coupon</p>
+                        <input id="coupon-code" type="number" placeholder="Enter your coupon"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <button id="coupon-btn" class="btn btn-primary bg-[#0874f2] rounded-[32px] w-full">Get
+                        Bonus</button>
+                </form>
+            </section>
+        </div>
+
+        <div id="pay-bill-parent" class="form hidden">
+            <h3 class="font-semibold text-[18px] pl-[24px] mt-[32px] mb-[16px]">Add Money</h3>
+            <section class="bg-white ml-[24px] mr-[24px] rounded-[24px] pt-[24px] pb-[24px]">
+                <form class="ml-[24px] mr-[24px]">
+                    <div>
+                        <p class="font-[550] mb-[12px]">Select a bank</p>
+                        <select id="bill" class="select rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]">
+                            <option value="" disabled selected hidden>Select</option>
+                            <option>Electricity Bill</option>
+                            <option>Waler Bill</option>
+                            <option>Gas Bill</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Biller Account Number</p>
+                        <input id="biller-account-number" type="number" placeholder="Enter account number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Amount to Pay</p>
+                        <input id="pay-amount" type="number" placeholder="Add Amount to pay"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <div>
+                        <p class="font-[550] mb-[12px]">Pin Number</p>
+                        <input id="pay-pin" type="number" placeholder="Enter 4 digit pin number"
+                            class="input rounded-[32px] bg-[#f4f5f7] w-full mb-[16px]" />
+                    </div>
+                    <button id="pay-bill-btn" class="btn btn-primary bg-[#0874f2] rounded-[32px] w-full">Pay
+                        Now</button>
+                </form>
+            </section>
+        </div>
+
+        <div id="transaction-history-parent" class="form hidden">
+            <div class="flex justify-between items-center  mt-[32px] mb-[16px]">
+                <h3 class="font-semibold text-[18px] pl-[24px]">Transaction History</h3>
+                <p class="text-[14px] text-[#080808] opacity-[50%] pr-[24px]">View All</p>
+            </div>
+            <section id="transaction-container">
+            
+            </section>
+        </div>
+        
+    </main>
+
+    <script src="home.js"></script>
+</body>
+
+</html>
